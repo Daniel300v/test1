@@ -9,8 +9,8 @@ fn main() {
 
     let mut player = 0;
     let mut won = false;
-    let mut x= -1;
-    let mut y = -1;
+    let mut x= 1;
+    let mut y = 1;
     let mut valid = false;
 
 
@@ -20,13 +20,13 @@ fn main() {
     while won == false{
         while valid == false{
             //get row
-            let mut line = String::new();
             println!("enter the row");
-            let y = std::io::stdin().read_line(&mut line).unwrap();
+            y = get_number();
             //get collumn
             println!("enter the collumn");
-            let x = std::io::stdin().read_line(&mut line).unwrap();
-
+            x = get_number();
+            
+            
             if grid[y][x] == " "{
                 valid = true;
             }  
@@ -34,14 +34,17 @@ fn main() {
         }
         
         if player == 1{
-            grid[y][x] == "X";
+            grid[y][x] = "X";
         }
         else{
-            grid[y][x] == "O";
+            grid[y][x] = "O";
         }
-        player = switch_player(player)
+
+        player = switch_player(player);
+        display(grid);
+        valid = false;
     }
-    display(grid);
+    
 }
 
 
@@ -63,3 +66,10 @@ fn switch_player(player:i32) -> i32{
     }
 }
 
+fn get_number() -> usize{
+    let mut i = 0;
+    let mut buffer = String::new();
+    std::io::stdin().read_line(&mut buffer).expect("Failed");
+    i = buffer.trim().parse::<usize>().unwrap();
+    return i;
+}
