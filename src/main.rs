@@ -1,6 +1,3 @@
-use std::io;
-use std::io::*;
-
 fn main() {
     //welcome message
     println!("welcome to noughts and crosses");
@@ -67,9 +64,7 @@ fn switch_player(player:i32) -> i32{
 }
 
 fn get_number() -> usize{
-    let mut i = 0;
     let mut buffer = String::new();
     std::io::stdin().read_line(&mut buffer).expect("Failed");
-    i = buffer.trim().parse::<usize>().unwrap();
-    return i;
+    return buffer.trim().parse::<usize>().unwrap();
 }
