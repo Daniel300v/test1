@@ -92,8 +92,8 @@ fn get_number() -> usize{
 
 fn check_win_conditions(grid : [[&str; 3]; 3]) -> bool{
     let mut won = false;
-    let mut index = 0;
-    let mut index2 = 0;
+    //let mut index = 0;
+    //let mut index2 = 0;
     let players = ["X","O"];
 
     for index2 in 0..2{
@@ -124,7 +124,7 @@ fn check_win_conditions(grid : [[&str; 3]; 3]) -> bool{
 
 fn check_draw_conditions(grid : [[&str; 3]; 3]) -> bool{
     let mut draw = true;
-    let mut index = 0;
+    //let mut index = 0;
 
 
 
