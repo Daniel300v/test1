@@ -124,9 +124,6 @@ fn check_win_conditions(grid : [[&str; 3]; 3]) -> bool{
 
 fn check_draw_conditions(grid : [[&str; 3]; 3]) -> bool{
     let mut draw = true;
-    //let mut index = 0;
-
-
 
     //collomn checker
     for index in 0..3  {
